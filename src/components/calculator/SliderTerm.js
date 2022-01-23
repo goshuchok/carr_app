@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Slider, TextField, Typography } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import * as calculatorActions from '../../redux/calculator/calculator-action';
 
 function calcFormat(value) {
   let currentValue = value;
@@ -16,6 +18,12 @@ function calcFormat(value) {
 
 function SliderTerm() {
   const [value, setValue] = useState(3);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(calculatorActions.getMonths(value));
+  }, [dispatch, value]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
