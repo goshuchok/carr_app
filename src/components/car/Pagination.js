@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
 import { Typography } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import * as autoActions from '../../redux/autosCard/auto-actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,10 +16,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PaginationControlled() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
+    dispatch(autoActions.getPage(page));
   };
 
   console.log('page', page);
