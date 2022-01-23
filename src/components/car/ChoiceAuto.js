@@ -2,7 +2,7 @@ import React from 'react';
 
 import CarsCard from './CarsCard';
 
-import { Container } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import CarBrand from './CarBrand';
 import CarModels from './CarModels';
 import PaginationControl from './Pagination';
@@ -12,9 +12,10 @@ function ChoiceAuto() {
     <div>
       <Container>
         <h4 className="choice_title">Выберите авто</h4>
-        <CarBrand />
-        <CarModels />
-
+        <Box style={{ display: 'flex' }}>
+          <CarBrand />
+          <CarModels />
+        </Box>
         <CarsCard />
         <PaginationControl />
       </Container>
