@@ -1,11 +1,11 @@
 import React from 'react';
 
 import CarsCard from './CarsCard';
-// import CreditInput from './CreditInput';
+
 import { Container } from '@material-ui/core';
 import CarBrand from './CarBrand';
 import CarModels from './CarModels';
-// import PaginationControl from './Pagination';
+import PaginationControl from './Pagination';
 
 function ChoiceAuto() {
   return (
@@ -16,7 +16,7 @@ function ChoiceAuto() {
         <CarModels />
 
         <CarsCard />
-        {/* <PaginationControl /> */}
+        <PaginationControl />
       </Container>
     </div>
   );

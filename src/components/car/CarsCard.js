@@ -1,11 +1,5 @@
-import { useEffect, useState } from 'react';
-import {
-  CardMedia,
-  CardContent,
-  CardActionArea,
-  Card,
-  Typography,
-} from '@material-ui/core';
+import { useState } from 'react';
+import { Typography } from '@material-ui/core';
 
 // import CarView from "./CarView";
 
