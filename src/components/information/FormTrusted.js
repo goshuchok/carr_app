@@ -1,29 +1,26 @@
 import { Grid, TextField } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import * as infoActions from '../../redux/information/information-action';
 
 function FormTrusted() {
-  const [trustPerson, setTrustPerson] = useState('');
-  const [trustPhone, setTrustPhone] = useState('');
-  const [trustMembers, setTrustMembers] = useState('');
+  const [values, setValues] = useState({
+    name: '',
+    phone: '',
+    person: '',
+  });
 
-  const submitForm = (e) => {
-    e.preventDefault();
-  };
+  const dispatch = useDispatch();
 
-  const handleInputChangePerson = (e) => {
-    setTrustPerson(e.target.value);
-  };
-  const handleInputChangePhone = (e) => {
-    setTrustPhone(e.target.value);
-  };
-  const handleInputChangeMembers = (e) => {
-    setTrustMembers(e.target.value);
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+    dispatch(infoActions.getTrusted(values));
   };
 
   return (
     <div>
       <h4 className="trusted_persons">Доверенные лица</h4>
-      <form onSubmit={submitForm}>
+      <form>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -32,8 +29,8 @@ function FormTrusted() {
               variant="outlined"
               fullWidth={true}
               type="text"
-              value={trustPerson}
-              onChange={handleInputChangePerson}
+              value={values.name}
+              onChange={handleChange('name')}
             />
           </Grid>
           <Grid item xs={12} sm={3}>
@@ -43,8 +40,8 @@ function FormTrusted() {
               variant="outlined"
               fullWidth={true}
               type="tel"
-              value={trustPhone}
-              onChange={handleInputChangePhone}
+              value={values.phone}
+              onChange={handleChange('phone')}
             />
           </Grid>
           <Grid item xs={12} sm={3}>
@@ -54,8 +51,8 @@ function FormTrusted() {
               variant="outlined"
               fullWidth={true}
               type="text"
-              value={trustMembers}
-              onChange={handleInputChangeMembers}
+              value={values.person}
+              onChange={handleChange('person')}
             />
           </Grid>
         </Grid>

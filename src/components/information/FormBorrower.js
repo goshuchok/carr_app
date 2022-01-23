@@ -1,33 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid, TextField } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import * as infoActions from '../../redux/information/information-action';
 
 function FormBorrower() {
-  const [name, setName] = useState('');
-  const [mobilePhone, setMobilePhone] = useState('');
-  const [workPhone, setWorkPhone] = useState('');
-  const [address, setAddress] = useState('');
+  const [values, setValues] = useState({
+    name: '',
+    phone: '',
+    workPhone: '',
+    location: '',
+  });
 
-  const submitForm = (e) => {
-    e.preventDefault();
-  };
+  const dispatch = useDispatch();
 
-  const handleInputChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleInputChangeMobilePhone = (e) => {
-    setMobilePhone(e.target.value);
-  };
-
-  const handleInputChangeWorkPhone = (e) => {
-    setWorkPhone(e.target.value);
-  };
-  const handleInputChangeAddress = (e) => {
-    setAddress(e.target.value);
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+    dispatch(infoActions.getInformation(values));
   };
 
   return (
-    <form onSubmit={submitForm}>
+    <form>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6}>
           <TextField
@@ -36,8 +28,8 @@ function FormBorrower() {
             variant="outlined"
             fullWidth={true}
             type="text"
-            value={name}
-            onChange={handleInputChangeName}
+            value={values.name}
+            onChange={handleChange('name')}
           />
         </Grid>
         <Grid item xs={12} sm={3}>
@@ -47,8 +39,8 @@ function FormBorrower() {
             variant="outlined"
             fullWidth={true}
             type="tel"
-            value={mobilePhone}
-            onChange={handleInputChangeMobilePhone}
+            value={values.phone}
+            onChange={handleChange('phone')}
           />
         </Grid>
         <Grid item xs={12} sm={3}>
@@ -58,8 +50,8 @@ function FormBorrower() {
             variant="outlined"
             fullWidth={true}
             type="tel"
-            value={workPhone}
-            onChange={handleInputChangeWorkPhone}
+            value={values.workPhone}
+            onChange={handleChange('workPhone')}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
@@ -69,8 +61,8 @@ function FormBorrower() {
             variant="outlined"
             fullWidth={true}
             type="text"
-            value={address}
-            onChange={handleInputChangeAddress}
+            value={values.location}
+            onChange={handleChange('location')}
           />
         </Grid>
       </Grid>

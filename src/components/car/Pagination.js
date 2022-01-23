@@ -24,8 +24,6 @@ export default function PaginationControlled() {
     dispatch(autoActions.getPage(page));
   };
 
-  console.log('page', page);
-
   return (
     <div className={classes.root}>
       <Typography>Page: {page}</Typography>
