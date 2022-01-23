@@ -1,0 +1,162 @@
+.MuiFilledInput-root {
+    background-color: rgba(0, 0, 0, -0.9);
+    border: 1px solid;
+    border-radius: 2px;
+  }
+  
+  .choice_title,
+  .borrower_information {
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 400;
+    padding-bottom: 40px;
+    &::before {
+      margin-left: -47px;
+      position: absolute;
+      content: '01';
+      height: 30px;
+      width: 24px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 38px;
+      color: #07b1fd;
+    }
+  }
+  .borrower_information {
+    &::before {
+      content: '02';
+    }
+  }
+  .trusted_persons {
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 400;
+    padding: 40px 0;
+  }
+  span .MuiSlider-rail {
+    height: 6px;
+    background: #c4c4c4;
+    border-radius: 8px;
+  }
+  
+  span .MuiSlider-track {
+    height: 6px;
+    background: linear-gradient(270deg, #07b1fd 0%, #bceaff 72.4%);
+    border-radius: 8px;
+  }
+  span .MuiSlider-thumb {
+    width: 16px;
+    height: 16px;
+    color: #ffffff;
+    filter: drop-shadow(-1px 2px 5px rgba(0, 0, 0, 0.31));
+  }
+  .card_prices {
+    align-items: center;
+    padding: 7px 0;
+  }
+  .card_controls {
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  .car_cost {
+    font-size: 1.125rem;
+    color: #8d8d8d;
+    line-height: 160%;
+  }
+  .car_sum {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 160%;
+    color: #07b1fd;
+    line-height: 160%;
+  }
+  .car_name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 22px;
+    color: #464646;
+    padding-bottom: 15px;
+  }
+  .selected {
+    background-color: red;
+  }
+  .form_control {
+    width: 318px;
+    height: 60px;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 0px;
+  }
+  .MuiFormControlLabel-root {
+    justify-content: space-around;
+  }
+  
+  .selected.clicked {
+    border: 1px solid #07b1fd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    .clicked {
+      color: #07b1fd;
+    }
+    .form_control {
+      background: #07b1fd;
+    }
+    .MuiIconButton-label {
+      color: #ffffff;
+    }
+    .MuiTypography-body1 {
+      color: #ffffff;
+    }
+  }
+  
+  .price_blue {
+    color: #07b1fd;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 38px;
+    float: left;
+    margin-right: 5px;
+  }
+  .price_black {
+    font-size: 1.125rem;
+    line-height: 29px;
+    font-weight: 400;
+    color: #949494;
+  }
+  .month_blue {
+    color: #07b1fd;
+    font-size: 0.875rem;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .month_black {
+    color: #464646;
+    font-size: 0.875rem;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .align_text {
+    text-align: end;
+  }
+  .submit_button {
+    color: #ffffff;
+    background: #07b1fd;
+    border-radius: 20px;
+    width: 219px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 160%;
+    transition: all 100ms ease;
+    &:hover {
+      background: #e790a6;
+    }
+  }
+  .form_submit {
+    padding: 40px 0 60px;
+  }
+  
