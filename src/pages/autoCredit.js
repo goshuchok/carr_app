@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from '../components/calculator/Slider';
 import ChoiceAuto from '../components/car/ChoiceAuto';
 import CreditTitle from '../components/car/CreditTitle';
-// import FormInformation from '../components/credit/FormInformation';
+import FormInformation from '../components/information/FormInformation';
 
 function AutoCredit() {
   return (
@@ -10,7 +10,7 @@ function AutoCredit() {
       <CreditTitle />
       <ChoiceAuto />
       <Slider />
-      {/* <FormInformation /> */}
+      <FormInformation />
     </>
   );
 }
