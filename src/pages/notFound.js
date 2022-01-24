@@ -15,9 +15,7 @@ function NotFound() {
           to="/autocredit"
           style={{ textDecoration: 'none' }}
         >
-          <Button variant="contained" color="primary">
-            Auto Credit
-          </Button>
+          Перейти к автокредитам
         </Link>
       </Grid>
     </Box>

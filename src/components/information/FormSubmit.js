@@ -24,6 +24,18 @@ function FormSubmit() {
       Приходиться кредитуємому: ${trusted.person} 
       `
     );
+    alert(
+      `При оплаті ${percentage}% вартості автомобіля, беручи позику під 17% на ${months} місяців, Ваша сума кредиту буде дорівнювати ${firstInstallment} грн з щомісячним латежем ${priceForEveryMonth} грн.
+      
+      Кредит надається: ${information.name}.
+      Мобільний телефон: ${information.phone}.
+      Робочий телефон: ${information.workPhone}.
+      Адреса проживання: ${information.location}.
+      Поручитель: ${trusted.name}.
+      Мобільний телефон: ${trusted.phone}.
+      Приходиться кредитуємому: ${trusted.person} 
+      `
+    );
   };
   return (
     <Grid
