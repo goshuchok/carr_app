@@ -101,7 +101,11 @@ export default function CarCard() {
                     <Grid item sm={6}>
                       <Grid>
                         <p className="price_blue">{car.UAH} UA</p>
-                        <img src={shield} alt="shield" />
+                        <img
+                          src={shield}
+                          alt="shield"
+                          style={{ marginTop: '26px' }}
+                        />
                       </Grid>
                     </Grid>
                     <Grid item sm={6} className="align_text">
